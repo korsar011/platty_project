@@ -332,7 +332,7 @@ const DeckPage = () => {
                                 placeholder="Type"
                             />
 
-                            <label className="form-label">Choose a file or enter an image URL:</label>
+                            <label className="form-label">Choose a file:</label>
                             <input
                                 type="file"
                                 className="form-control"

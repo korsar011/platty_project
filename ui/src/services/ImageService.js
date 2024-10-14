@@ -46,7 +46,7 @@ const ImageService = {
         try {
             const response = await ApiClient.post(`${IMAGES_URL}/premium/card`, imageRequest);
             console.log("Response from uploadPremiumCardImageFromText:", response.data);
-            return response.data.url;
+            return response.url;
         } catch (error) {
             console.error('Error uploading premium card image from text:', error);
             throw error;

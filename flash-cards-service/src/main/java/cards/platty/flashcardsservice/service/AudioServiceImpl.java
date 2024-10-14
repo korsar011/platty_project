@@ -48,7 +48,9 @@ public class AudioServiceImpl implements AudioService {
         }
 
         byte[] audioBytes = response.getBody();
-        MultipartFile file = new MockMultipartFile("audio", "audio.ogg", "audio/ogg", audioBytes);
+        String uniqueFilename = "audio_" + System.currentTimeMillis() + ".ogg";
+
+        MultipartFile file = new MockMultipartFile("audio", uniqueFilename, "audio/ogg", audioBytes);
 
         logger.info("Uploading audio for cardId: {}", updateAudioDto.getCardId());
         return uploadAudio(updateAudioDto.getCardId(), file);
@@ -80,7 +82,7 @@ public class AudioServiceImpl implements AudioService {
         Audio audio = audioRepository.findById(audioId)
                 .orElseThrow(() -> new AudioNotFoundException(audioId));
 
-        String objectName = extractObjectNameFromUrl(audio.getUrl());
+        String objectName = extractObjectNameFromUrl(audio.getName());
         deleteFromMinio(objectName);
         audioRepository.delete(audio);
     }

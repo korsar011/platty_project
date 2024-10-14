@@ -75,6 +75,9 @@ const DeckCards = () => {
                     const uploadedImageUrl = await ImageService.uploadPremiumCardImageFromText(imageRequest);
                     console.log("Uploaded image URL:", uploadedImageUrl);
 
+                    const updatedCardData = { "imageUrl": uploadedImageUrl };
+                    await CardService.updateCard(id, updatedCardData);
+
                     setCards((prevCards) =>
                         prevCards.map((card) => (card.id === id ? { ...card, image: { url: uploadedImageUrl } } : card))
                     );
@@ -95,9 +98,7 @@ const DeckCards = () => {
                 };
                 console.log("Sending translation request:", translateRequest);
                 const translationResponse = await CardService.updateCardBackTextFromFrontTextTranslation(translateRequest);
-                console.log("Translation response:", translationResponse);
                 const backText = translationResponse.backText;
-                console.log("Translation:", backText);
 
                 setCards((prevCards) =>
                     prevCards.map((card) => (card.id === id ? { ...card, backText: backText } : card))
@@ -111,12 +112,8 @@ const DeckCards = () => {
                     cardId: id,
                 };
 
-                console.log("Sending audio generation request:", audioRequest);
-
                 try {
                     const audioUrl = await AudioService.generateAudio(audioRequest);
-                    console.log("Audio generated successfully:", audioUrl);
-
                     setCards((prevCards) =>
                         prevCards.map((card) => (card.id === id ? { ...card, audioUrl: audioUrl } : card))
                     );

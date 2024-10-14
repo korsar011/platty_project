@@ -26,15 +26,22 @@ public class GoogleTextToSpeechConverterService implements TextToSpeechConverter
 
     @Override
     public byte[] convertTextToSpeech(TextToSpeechRequest textToSpeechRequest) {
+        GoogleCredentials credentials;
         try {
-            GoogleCredentials credentials = getGoogleCredentials();
-            TextToSpeechClient textToSpeechClient = getTextToSpeechClient(credentials);
+            credentials = getGoogleCredentials();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        try (TextToSpeechClient textToSpeechClient = getTextToSpeechClient(credentials)) {
             return synthesizeSpeech(textToSpeechClient, textToSpeechRequest);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
+
 
     private GoogleCredentials getGoogleCredentials() throws IOException {
         String credentialsFilename = googleCredentialsProvider.getCredentialsFilename();

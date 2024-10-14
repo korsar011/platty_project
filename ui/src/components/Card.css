@@ -96,12 +96,13 @@
     z-index: 3;
 }
 
+.card-back .sound:hover {
+    cursor: pointer;
+}
+
 
 .cover.item-a {
     background-image: url('https://img.freepik.com/free-vector/gradient-lo-fi-illustration_23-2149375747.jpg?t=st=1709026210~exp=1709026810~hmac=d7179eff4021ed4652842f6c060dab7a06076f57bbe538d1adf4946b506d874c');
-}
-.cover.item-b {
-    background-image: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80');
 }
 
 .card-back {

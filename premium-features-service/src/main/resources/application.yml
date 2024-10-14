@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: premium-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flash_cards_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+server:
+  port: 8088
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+    instance-id: "${spring.application.name}:${server.port}"
+    prefer-ip-address: true
+api:
+  gateway:
+    url: http://localhost:8080
+
+google:
+  translator:
+    credentialsFilename: pivotal-racer-438602-d6-7911469a8f99.json
+
+jwt:
+  secret: +l2sQK9Lfd8Y83PU1wHEG+c1L7TNag8u32PRZjb4UX8=

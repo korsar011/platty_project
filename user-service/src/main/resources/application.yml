@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flash_cards_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+server:
+  port: 8081
+
+jwt:
+  secret: +l2sQK9Lfd8Y83PU1wHEG+c1L7TNag8u32PRZjb4UX8=
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+
+api:
+  gateway:
+    url: http://localhost:8080
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      authServiceCircuitBreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000ms
+        permittedNumberOfCallsInHalfOpenState: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    logfile:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: true

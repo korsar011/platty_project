@@ -1,0 +1,256 @@
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about-me {
+    position: relative; /* Needed for absolute positioning inside the container */
+}
+
+
+.about-me .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #18d26e;
+}
+
+.about-me .content ul {
+    color: #fff;
+    list-style: none;
+    padding: 0;
+}
+
+.about-me .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.about-me .content ul strong {
+    margin-right: 10px;
+}
+
+.about-me .content ul i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #18d26e;
+    line-height: 0;
+}
+
+.about-me .content p:last-child {
+    margin-bottom: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.edit-save-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+#editProfileBtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+#saveProfileBtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+#profile-info input, #profile-info select{
+    background-color: transparent;
+    color: inherit;
+}
+
+#profile-info select option {
+    background-color: black;
+    color: white;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+#selected-languages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+#selected-languages li {
+    display: inline;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#selected-languages li:after {
+    content: ",";
+    margin-right: 5px;
+}
+#selected-languages li:last-child:after {
+    content: "";
+}
+
+.bordered {
+    border: 1px solid #555;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ddd;
+    background-color: transparent;
+    transition: background-color 0.3s, border-color 0.3s, text-decoration 0.3s, color 0.3s;
+}
+
+.bordered:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: #f00;
+    text-decoration: line-through;
+    color: #f00;
+}
+
+.react-select__control {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.react-select__control--is-focused {
+    border-color: #18d26e !important;
+    box-shadow: 0 0 5px rgba(24, 210, 110, 0.5) !important;
+}
+
+.react-select__menu {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #555;
+}
+
+.react-select__option {
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 10px;
+}
+
+.react-select__option--is-focused {
+    background-color: #18d26e !important;
+}
+
+.react-select__option--is-selected {
+    background-color: #18d26e !important;
+    color: #040404 !important;
+}
+
+.react-select__placeholder {
+    color: #aaa !important;
+}
+
+.react-select__single-value {
+    display: flex;
+    flex-direction: column;
+    color: #fff !important;
+}
+
+.react-select__value-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+.react-select__indicator {
+    color: #18d26e !important;
+}
+
+.react-select__multi-value {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+.react-select__multi-value__label {
+    color: #fff !important;
+}
+
+.react-select__multi-value__remove {
+    color: #f00 !important;
+}
+
+.react-select__multi-value__remove:hover {
+    color: darkred !important;
+    background-color: transparent !important;
+}
+
+.react-select__clear-indicator {
+    color: red !important;
+}
+
+.react-select__clear-indicator:hover {
+    color: darkred !important;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+
+.image-container.edit-mode:hover img {
+    filter: blur(4px);
+}
+
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+
+.upload-icon {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 10px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.upload-caption {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 2;
+}
+
+.image-container.edit-mode:hover .upload-icon {
+    cursor: pointer;
+    display: flex;
+}
+.image-container.edit-mode:hover .upload-caption {
+    display: flex;
+}

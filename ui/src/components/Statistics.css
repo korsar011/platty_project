@@ -1,0 +1,35 @@
+#total-time-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#total-time-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#total-time-container li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#total-time-container strong {
+    color: #18d26e;
+}
+
+#total-time-container span {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    #total-time-container {
+        padding: 15px;
+    }
+
+    #total-time-container li {
+        font-size: 16px;
+    }
+}

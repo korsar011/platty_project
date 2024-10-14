@@ -1,0 +1,42 @@
+spring:
+  application:
+     name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flash_cards_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+    security:
+      oauth2:
+        client:
+          registration:
+#           Удалили, т.к мешал пушить
+
+
+api:
+  gateway:
+    url: http://localhost:8080
+
+jwt:
+  secret: +l2sQK9Lfd8Y83PU1wHEG+c1L7TNag8u32PRZjb4UX8=
+  accessTokenValidityInMinutes: 30
+  refreshTokenValidityInDays: 7
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+    instance-id: "${spring.application.name}:${server.port}"
+
+server:
+  port: 8181

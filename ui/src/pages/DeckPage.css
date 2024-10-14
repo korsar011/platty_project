@@ -1,0 +1,373 @@
+/* Основные стили для раздела Deck */
+.deck {
+    padding: 30px 0 60px;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.deck .container {
+    background: rgba(0, 0, 0, 0.9);
+    position: relative;
+    padding: 30px;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.deck .icon-box {
+    position: relative;
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 20px;
+    transition: all ease-in-out 0.3s;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    width: 100%;
+}
+
+.deck .icon-box .icon {
+    width: 150px;
+    height: 150px;
+    background: #18d26e;
+    border-radius: 50%;
+    transition: all 0.3s ease-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.deck .icon-box input[type="text"]:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+.deck .icon-box p {
+    transition: color 0.3s;
+}
+
+.deck .icon-box p:hover {
+    color: #2ecc71;
+}
+
+.deck .icon-box .icon i {
+    color: #fff;
+    font-size: 90px;
+    font-style: normal;
+}
+
+.deck .icon-box:hover {
+    background: #2ecc71 !important;
+    transition: background 0.3s ease;
+}
+
+.deck .icon-box.editing:hover {
+    background: transparent !important;
+}
+
+.deck .icon-box:hover .icon {
+    background: #fff !important;
+}
+
+.deck .icon-box:hover .icon i {
+    color: #2ecc71 !important;
+}
+
+.deck .icon-box:hover h4,
+.deck .icon-box:hover p {
+    color: #fff !important;
+}
+
+.deck .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.deck .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #ddd;
+}
+
+.deck .icon-box.add-deck-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.deck .icon-box.add-deck-button .icon {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0);
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.deck .icon-box.add-deck-button .icon i {
+    color: white;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.deck .icon-box.add-deck-button h4 {
+    color: white;
+    font-size: 24px;
+}
+
+#decks .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#decks .deck-item {
+    width: calc(25% - 30px);
+    margin-bottom: 30px;
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e6f2 100%);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 80%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff3e3e;
+    transition: color 0.3s;
+}
+
+.close-icon:hover {
+    color: #ff0000;
+}
+
+#createDeckForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-deck-button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.create-deck-button:hover {
+    background: #45a049;
+}
+
+#createDeckForm input,
+#createDeckForm textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#createDeckForm input:focus,
+#createDeckForm textarea:focus {
+    border-color: #4CAF50;
+}
+
+/* Стили для изображения */
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-box:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.upload-icon {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #18d26e;
+    z-index: 1;
+    display: block;
+}
+/* Стили для кнопки удаления */
+.delete-button {
+    background: none;
+    border: none;
+    color: #ff3e3e;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.3s;
+}
+
+.delete-button:hover {
+    color: #ff0000;
+}
+
+.or-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.or-text {
+    font-weight: bold;
+    color: #555;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #73e35f;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Стили для кнопок редактирования */
+.edit-button,
+.done-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.done-button {
+    display: none;
+}
+
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #73e35f;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.deck-edit-name,
+.deck-edit-type {
+    background-color: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    padding: 5px;
+    transition: background 0.3s, border-color 0.3s ease;
+    cursor: text;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.deck-edit-name:focus,
+.deck-edit-type:focus {
+    border-color: #ffffff;
+    background: rgba(204, 204, 204, 0.2);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.17);
+    outline: none;
+}

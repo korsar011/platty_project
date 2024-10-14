@@ -1,0 +1,19 @@
+package cards.platty.flashcardsservice.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TranslateCardFrontTextRequest {
+
+    private Long cardId;
+
+    private String targetLanguage;
+
+}

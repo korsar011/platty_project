@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: flash-cards-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flash_cards_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  sql:
+    init:
+      mode: always
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+minio:
+  url: http://localhost:9000
+  imagesBucket: flash-cards-images
+  audioBucket: flash-cards-audio
+  accessKey: YWwdxv1fVsy6Xsh0tlkG
+  secretKey: FHmvmweT6iFgeB35HrFSANr5h5IGOdlAPvxvcQYd
+
+
+logging:
+  level:
+    ROOT: INFO
+    feign=DEBUG:
+jwt:
+  secret: +l2sQK9Lfd8Y83PU1wHEG+c1L7TNag8u32PRZjb4UX8=
+
+server:
+  port: 7001
+
+app:
+  settings:
+    maxMemoryRating: 4.5
+    rewardMark: 5
+    penaltyMark: 2
+    defaultFrontText: word
+    defaultBackText: translation
+    defaultCardImageUrl: /default-image.jpg
+    maxDaysForLearntForever: 32
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
+    instance-id: "${spring.application.name}:${server.port}"
+    prefer-ip-address: true
+

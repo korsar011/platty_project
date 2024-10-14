@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap');
+
+.cardrow {
+    align-items: center;
+    height: 500px;
+}
+
+.card {
+    background-color: transparent !important;
+    position: relative;
+    height: 400px;
+    width: 400px;
+    align-self: center;
+    margin: 10px 0;
+    transition: ease all 0.5s;
+    perspective: 1200px;
+}
+.cover {
+    height: 400px;
+    width: 400px;
+    transform-style: preserve-3d;
+    transition: ease all 0.5s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cover:before {
+    content: '';
+    position: absolute;
+    border: 5px solid rgba(255, 255, 255, .5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, .3);
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    transition: ease all 1.0s;
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+}
+.cover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: ease all 1.0s;
+    background: rgba(0, 0, 0, .4);
+}
+
+.cover h1 {
+    font-weight: 600;
+    position: absolute;
+    bottom: 55px;
+    left: 50px;
+    color: white;
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+    transform-style: preserve-3d;
+    transition: ease all 1.5s;
+    z-index: 3;
+    font-size: 3em;
+    transform: translateZ(0px);
+}
+.cover .id {
+    font-weight: 200;
+    position: absolute;
+    top: 55px;
+    right: 50px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: ease all 1.5s;
+    z-index: 3;
+    font-size: 3em;
+    transform: translateZ(-50px) rotateY(180deg);
+}
+.sound-container {
+    top: 55px;
+    right: 50px;
+    color: white;
+    position: absolute;
+    z-index: 3;
+    transform: translateZ(-50px) rotateY(180deg);
+}
+
+.card-back .sound {
+    font-weight: 600;
+    position: absolute;
+    font-size: 3em;
+    transform-style: preserve-3d;
+    transition: ease all 1.0s;
+    z-index: 3;
+}
+
+
+.cover.item-a {
+    background-image: url('https://img.freepik.com/free-vector/gradient-lo-fi-illustration_23-2149375747.jpg?t=st=1709026210~exp=1709026810~hmac=d7179eff4021ed4652842f6c060dab7a06076f57bbe538d1adf4946b506d874c');
+}
+.cover.item-b {
+    background-image: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80');
+}
+
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1512531123205-560f5974e686?q=80&w=1400&auto=format&fit=crop&w=600&q=80');
+    background-size: cover;
+    background-position: center;
+    transform-style: preserve-3d;
+    transition: ease all 0.5s;
+    transform: translateZ(-1px) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.card-back h2 {
+    font-weight: 600;
+    position: absolute;
+    bottom: 80px;
+    right: 50px;
+    color: white;
+    text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+    font-size: 3em;
+    transform-style: preserve-3d;
+    transition: ease all 1.0s;
+    z-index: 3;
+    transform: translateZ(-50px) rotateY(180deg);
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transform-style: preserve-3d;
+    transition: ease all 1.5s;
+    z-index: -1;
+    transform: translateZ(-15px);
+}
+
+.card-back button {
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: ease transform 0.5s, ease background 0.5s;
+    transform: translateZ(-1px) rotateY(-180deg);
+    border-radius: 5px;
+    border: 3px solid white;
+    font-weight: 200;
+    font-size: 1.3em;
+    padding: 14px 32px;
+    text-decoration: none;
+    margin: 0 10px;
+    background: transparent;
+    color: white;
+}
+
+.card-back button.repeat-btn {
+    background-color: rgba(0, 50, 86, 0.7);
+}
+
+.card-back button.memorized-btn {
+    background-color: rgba(0, 128, 0, 0.7);
+}
+
+.card-back button.repeat-btn:hover {
+    background-color: #003256;
+    border-color: #5875d9;
+}
+
+.card-back button.memorized-btn:hover {
+    background-color: green;
+    border-color: #73e35f;
+}
+
+
+.card-back button:hover:after {
+    opacity: 1;
+}
+
+.is-flipped .cover {
+    transform: rotateX(0deg) rotateY(-180deg);
+}
+.is-flipped .cover:before {
+    transform: translateZ(30px);
+}
+.is-flipped .cover:after {
+    background-color: black;
+}
+.is-flipped h1 {
+    transform: translateZ(100px);
+}
+.is-flipped .price {
+    transform: translateZ(60px);
+}
+.is-flipped button {
+    transform: translateZ(-60px) rotatey(-180deg);
+}
+
+.deck-item:hover .icon-box {
+    background-color: #35e888;
+}
+
+.deck-item.selected-deck .icon-box {
+    background-color: #18d26e;
+}
+
+.deck-item.selected-deck:hover .icon-box {
+    background-color: #35e888;
+}
+
+.deck-item .icon-box {
+    border-radius: 8px;
+}
+
+.congratulations-message {
+    text-align: center;
+    font-size: 40px;
+    color: #35e888;
+    animation-name: saluteAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes saluteAnimation {
+    0% { transform: translateY(-50px) rotate(-30deg); opacity: 0; }
+    50% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    90% { transform: translateY(-30px) rotate(15deg); opacity: 0.8; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pop-animation {
+    animation: pop 0.5s ease;
+}

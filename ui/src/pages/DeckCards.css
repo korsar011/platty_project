@@ -1,0 +1,394 @@
+.deck-cards {
+    padding: 30px 0 60px;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.deck-cards .container {
+    background: rgba(0, 0, 0, 0.9);
+    position: relative;
+    padding: 30px;
+    z-index: 1;
+}
+
+.deck-cards .icon-box {
+    position: relative;
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 20px;
+    transition: all ease-in-out 0.3s;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.deck-cards .icon-box .icon {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    background: #18d26e;
+    border-radius: 50%;
+    transition: all 0.3s ease-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.deck-cards .icon-box .icon i {
+    color: #fff;
+    font-size: 60px;
+    font-style: normal;
+}
+
+.deck-cards .icon-box:hover {
+    background: #2ecc71 !important;
+    transition: background 0.3s ease;
+}
+
+.deck-cards .icon-box:hover .icon {
+    background: #fff !important;
+}
+
+.deck-cards .icon-box:hover .icon i {
+    color: #2ecc71 !important;
+}
+
+.deck-cards .icon-box:hover h4,
+.deck-cards .icon-box:hover p {
+    color: #fff !important;
+}
+
+.deck-cards .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.deck-cards .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #ddd;
+}
+
+.deck-cards .icon-box.add-card-button .icon {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0);
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deck-cards .icon-box.add-card-button .icon i {
+    color: white;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#deck-cards .row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#deck-cards .card-item {
+    width: calc(25% - 15px);
+    margin-bottom: 20px;
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+.or-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.or-text {
+    font-weight: bold;
+    color: #555;
+}
+
+input.front-text {
+    background-color: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input.front-text:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.17);
+}
+
+input.back-text {
+    background-color: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input.back-text:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.17);
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.recording-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.record-button,
+.stop-button,
+.save-button,
+.close-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.record-button:hover,
+.stop-button:hover,
+.save-button:hover,
+.close-button:hover {
+    background-color: #0056b3;
+}
+
+.record-button:disabled {
+    background-color: #007bff;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.audio-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.audio-preview h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.record-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.record-button:hover {
+    background: rgba(0, 123, 255, 0.9);
+}
+
+.record-button:disabled {
+    background: rgba(0, 123, 255, 0.5);
+    cursor: not-allowed;
+}
+
+.record-button i {
+    color: white; /* Цвет иконки */
+    font-size: 24px; /* Размер иконки */
+}
+
+.premium-section {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.premium-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.custom-checkbox {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #18d26e;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Стили для dropdown */
+.target-language-selector {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.target-language-selector select {
+    appearance: none;
+    background-color: #f8f8f8; /* Светлый фон */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: 150px;
+}
+
+/* Стрелочка вниз */
+.target-language-selector::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Стили для опций внутри dropdown */
+.target-language-selector select option {
+    background-color: #fff; /* Белый фон для опций */
+    color: #333; /* Темный цвет текста */
+    padding: 10px;
+}
+
+/* Стили для hover */
+.target-language-selector select option:hover {
+    background-color: #e0e0e0; /* Светло-серый при наведении */
+}
+
+/* Стили для select при фокусе */
+.target-language-selector select:focus {
+    border-color: #333; /* Темная рамка при фокусе */
+    outline: none;
+}
+
+/* Кастомный вид стрелки вниз */
+.target-language-selector select {
+    position: relative;
+    appearance: none;
+    padding-right: 30px; /* Отступ для стрелочки */
+}
